@@ -1,0 +1,18 @@
+<!-- converter/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG to DICOM Converter</title>
+</head>
+<body>
+    <h1>Convert PNG to DICOM</h1>
+    <form action="{% url 'png_to_dcm' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="png_file">Select a PNG file:</label>
+        <input type="file" id="png_file" name="png_file" accept="image/png" required>
+        <button type="submit">Convert to DICOM</button>
+    </form>
+</body>
+</html>
